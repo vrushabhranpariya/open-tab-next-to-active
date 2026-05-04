@@ -41,8 +41,8 @@ chrome.tabs.onCreated.addListener(async (tab) => {
 	const { isBrowserLaunch: isLaunch } = await chrome.storage.local.get('isBrowserLaunch');
 	if (isLaunch) return;
 
-	// Skip if tab already has an opener (already positioned correctly)
-	if (tab.openerTabId !== undefined) return;
+	// // Skip if tab already has an opener (already positioned correctly)
+	// if (tab.openerTabId !== undefined) return;
 
 	// Get active tab to position next to it
 	const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
